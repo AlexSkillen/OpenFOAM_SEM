@@ -1,0 +1,13 @@
+EXE_INC = \
+	-I$(LIB_SRC)/finiteVolume/lnInclude \
+	-I$(LIB_SRC)/meshTools/lnInclude \
+        -I$(LIB_SRC)/turbulenceModels/LES/LESdeltas/lnInclude \
+        -I$(LIB_SRC)/turbulenceModels/LES/LESfilters/lnInclude \
+	-I$(LIB_SRC)/turbulenceModels \
+	-I$(LIB_SRC)/transportModels \	
+	-I$(LIB_SRC)/turbulenceModels/incompressible/LES/lnInclude	
+	
+EXE_LIBS = \
+	-lfiniteVolume \
+	-lmeshTools \
+	-lincompressibleTurbulenceModel
