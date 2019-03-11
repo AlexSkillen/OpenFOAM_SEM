@@ -1,4 +1,3 @@
-RandomWithBit/RandomWithBit.C
 SEM/turbulentInletSEMFvPatchField.C
 SEMspot/SEMspot.C
 SEMBase/SEMBase.C

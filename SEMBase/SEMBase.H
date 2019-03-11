@@ -21,7 +21,7 @@ Reference. Accuracy and Efficiency Improvements in Synthetic Eddy Methods. A. Sk
 #ifndef SEMBase_H
 #define SEMBase_H
 
-#include "RandomWithBit.H"
+#include "Random.H"
 #include "fixedValueFvPatchFields.H"
 #include "primitivePatchInterpolation.H"
 
@@ -45,7 +45,7 @@ class SEMBase
     // Protected data
 
 protected:
-        RandomWithBit ranGen_;
+        Random ranGen_;
         Field<vector> meanField_;
         label curTimeIndex_; 
         boundBox semBox_;
@@ -122,7 +122,7 @@ public:
                 return RIn_;
             }
 
-            RandomWithBit& ranGen()
+            Random& ranGen()
             {
                 return ranGen_;
             }

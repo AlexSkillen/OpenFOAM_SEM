@@ -58,7 +58,7 @@ void SEMspot::initialise(const bool setToFace )
 {
     if( Pstream::master() )
     { 
-        pf_->ranGen().randomise( origin_ );
+        pf_->ranGen().randomise01( origin_ );
         origin_ = cmptMultiply( origin_, pf_->semBox().span() );
         origin_ += pf_->semBox().min();
     }
@@ -91,8 +91,13 @@ void SEMspot::initialise(const bool setToFace )
     if( Pstream::master() )
     {
         //also randomise the sign of the spot (i.e. epsilon_ = 1 or -1)
-        pf_->ranGen().bitRandomise( epsilon_ );    
-        epsilon_ *= 2.0;
+        pf_->ranGen().randomise01<vector>( epsilon_ );
+        for( int i=0; i<3; i++ ) 
+        {
+            epsilon_[i] = round(epsilon_[i]);
+        }
+
+        epsilon_ *= 2;
         epsilon_ -= pTraits<vector>::one;
     }
 
@@ -193,7 +198,7 @@ void SEMspot::projectBack( vector nn, bool setToFace )
         else
         {
             scalar randNum;
-            pf_->ranGen().randomise( randNum );
+            pf_->ranGen().randomise01( randNum );
             randNum*=2.0;
             randNum-=1.0;
 

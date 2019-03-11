@@ -20,7 +20,7 @@ Reference. Accuracy and Efficiency Improvements in Synthetic Eddy Methods. A. Sk
 #ifndef turbulentInletSEMFvPatchField_H
 #define turbulentInletSEMFvPatchField_H
 
-#include "RandomWithBit.H"
+#include "Random.H"
 #include "SEMBase.H"
 
 

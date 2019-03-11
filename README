@@ -5,4 +5,6 @@ DOI: 10.1016/j.ijheatfluidflow.2016.09.008
 
 The file U, in this directory, shows how the SEM should be set up. There are three user inputs. UIn is the prescribed mean velocity at the inlet. RIn is the prescribed Reynolds stress tensor at the inlet. Sigma is the prescribed lengthscale of the turbulence.
 
-Sigma can usually be estimated from a RANS calculation as k^{3/2) / epsilon, where k and epsilon are the turbulent kinetic energy, and dissipation rate respectively. However, it is very important to manually clip the lengthscale returned by this estimate to prevent excessively small or large eddies. For example, eddies should not be smaller than the local LES filter width, or maximum cell dimension. Eddies should also not be larger than the geometry for internal flows (typically, for a channel flow, sigma < 0.4 delta seems to work well). 
+Sigma can usually be estimated from a RANS calculation as k^{3/2) / epsilon, where k and epsilon are the turbulent kinetic energy, and dissipation rate respectively. However, it is very important to manually clip the lengthscale returned by this estimate to prevent excessively small or large eddies. For example, eddies should not be smaller than the local LES filter width, or maximum cell dimension. Eddies should also not be larger than the geometry for internal flows (typically, for a channel flow, sigma < 0.4 delta seems to work well).
+
+This code has been tested on OpenFOAM 1806. 
