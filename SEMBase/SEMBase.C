@@ -191,7 +191,6 @@ int SEMBase::numEddies()
     reduce( numSpots, maxOp<scalar>() );
     label requested = numSpots;
     numSpots = min( numSpots, maxSpots );
-    Info<<patchTotArea<<" "<<minLength<<endl;
     if( numSpots == maxSpots )
     {
         WarningIn("SEMBase::numEddies()")
