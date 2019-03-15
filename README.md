@@ -51,15 +51,19 @@ boundaryField
 }
 ```
 
-There are three user inputs: `UInp` is the prescribed mean velocity at the
+There are three user inputs: `UIn` is the prescribed mean velocity at the
 inlet. `RIn` is the prescribed Reynolds stress tensor at the inlet. Sigma is
-the prescribed lengthscale of the turbulence.
+the prescribed lengthscale of the turbulence (which may be anisotropic). All 
+inputs can be inhomogeneous if desired, by setting them to nonuniform Lists.
 
-Sigma can usually be estimated from a RANS calculation as k^{3/2) / epsilon,
-where k and epsilon are the turbulent kinetic energy, and dissipation rate
-respectively. However, it is very important to manually clip the lengthscale
-returned by this estimate to prevent excessively small or large eddies. For
-example, eddies should not be smaller than the local LES filter width, or
+Sigma can usually be estimated from engineering judgement, or from a prior RANS 
+calculation as k^{3/2} / epsilon, where k and epsilon are the turbulent 
+kinetic energy, and dissipation rate respectively. For an anisotropic 
+length-scale, the siszes can be estimated from an RSM closure, with sigma 
+being set to (uu^{3/2}/epsilon, vv^{3/2}/epsilon, ww^{3/2}/epsilon). 
+In any case, it is very important to manually clip the lengthscale
+returned by any empirical estimate to prevent excessively small or large eddies. 
+For example, eddies should not be smaller than the local LES filter width, or
 maximum cell dimension. Eddies should also not be larger than the geometry for
 internal flows (typically, for a channel flow, sigma < 0.4 delta seems to work
 well).
