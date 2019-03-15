@@ -29,7 +29,7 @@ By default the compiled library will be in `FOAM_USER_LIBBIN`.
 Add to your `system/controlDict`
 
 ```
-lib("libSEM.so")
+libs ("libSEM.so");
 ```
 
 Finally add to your velocity input conditions the following subdictionary
