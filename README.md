@@ -4,7 +4,7 @@ This code provides an inlet conditions for LES, DES, etc. It is based on the
 synthetic eddy method, with the full algorithm described in: 
 
 A. Skillen, A. Revell and T. Craft. "Accuracy and Efficiency Improvements in
-Synthetic Eddy Methods". International Journal of Heat Transfer Flow. (2016) 
+Synthetic Eddy Methods". International Journal of Heat and Fluid Flow. (2016) 
 DOI: 10.1016/j.ijheatfluidflow.2016.09.008
 
 This code has been tested on OpenFOAM v1806. 
