@@ -167,7 +167,14 @@ void SEMBase::initilise()
 
 
     //set averaging window size
-    avgWindow_ = cmptMax( max(sigma_) )/mag(UBulk_) * 5.0;
+    if ( mag(cmptMax( max(sigma_) )) > ROOTVGREAT && mag(UBulk_) < SMALL)
+    {
+        avgWindow_ = cmptMax( max(sigma_) );
+    }
+    else
+    {
+        avgWindow_ = cmptMax( max(sigma_) )/mag(UBulk_) * 5.0;
+    }
     reduce( avgWindow_, maxOp<scalar>() );
 }
 
